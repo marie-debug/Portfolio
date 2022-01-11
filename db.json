@@ -1,0 +1,38 @@
+{
+  "projects": [
+    {
+      "bigimage": "https://place-hold.it/700x800?",
+      "image": "https://place-hold.it/286x180?",
+      "name": "Analysis Of Our Fortnight Budget",
+      "summary": "An analysis of our fortnight budget using python and matplotlib for graph visualization.",
+      "id": "Analysis-Of-Our-Fortnight-Budget",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+    },
+    {
+      "bigimage": "https://place-hold.it/700x800?",
+      "image": "https://place-hold.it/286x180?",
+      "name": "coming soon",
+      "summary": "follow the white rabbit",
+      "id": "xxxx",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+    }
+  ],
+  "socialmedia": [
+    {
+      "name": "linkedin",
+      "links": "https://www.linkedin.com/in/marion-d-10471482/"
+    },
+    {
+      "name": "github",
+      "links": "https://github.com/marie-debug"
+    },
+    {
+      "name": "google",
+      "links": "https://insta.com/marie-debug"
+    }
+  ],
+  "bio": {
+    "title": "ABOUT ME",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+  }
+}

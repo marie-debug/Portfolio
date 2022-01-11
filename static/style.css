@@ -1,0 +1,38 @@
+﻿.list {
+	background-color: black;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#main {
+	background-color: black;
+	padding-bottom: 121px;
+	padding-top: 100px;
+}
+
+nav {
+	z-index: 10000;
+	position: fixed !important;
+	width: 100%;
+	top: 0;
+}
+
+.blackhole {
+	background-image: url("blackhole.gif");
+	background-position: center;
+	background-size: contain;
+}
+
+section {
+	padding-bottom: 100px;
+	padding-top: 100px;
+	border-bottom: 1px solid white;
+}
+
+section h1 {
+	padding-bottom: 30px;
+}
