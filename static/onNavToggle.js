@@ -5,7 +5,7 @@ function onNavClick() {
 
     if (buttonClasses.contains("collapsed") == false) {
         element.classList.add("container-padding");
-    } else {
+    } else {git
         element.classList.remove("container-padding");
     }
 }

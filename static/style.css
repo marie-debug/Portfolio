@@ -101,5 +101,11 @@ section h1 {
    footer .footer-text{
         display:block;
    }
+   #privacy h2 h1{
 
+		font-size: 60px !important;
+   }
+    #privacy ul li{
+
+		font-size: 40px !important;
 }

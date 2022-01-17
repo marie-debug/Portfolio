@@ -20,15 +20,18 @@
   "socialmedia": [
     {
       "name": "linkedin",
+      "type": "fab",
       "links": "https://www.linkedin.com/in/marion-d-10471482/"
     },
     {
+      "type": "fab",
       "name": "github",
       "links": "https://github.com/marie-debug"
     },
     {
-      "name": "google",
-      "links": "https://insta.com/marie-debug"
+      "type": "fas",
+      "name": "envelope",
+      "links": "mailto:marionakinyi.ma@gmail.com"
     }
   ],
   "bio": {

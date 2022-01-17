@@ -47,29 +47,29 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {%for i in range(0,projectslen)%}
-                        <li><a class="dropdown-item" href="#{{data.projects[i].id}}">{{data.projects[i].name}}</a></li>
+                        <li><a class="dropdown-item" href="/#{{data.projects[i].id}}">{{data.projects[i].name}}</a></li>
                         {%endfor%}
 
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#aboutme">About me</a></li>
+                        <li><a class="dropdown-item" href="/#aboutme">About me</a></li>
                     </ul>
                 </li>
 
 
             </ul>
             <div class="d-flex d-none d-lg-block">
-               <ul class="list-group list-group-horizontal list-group-flush">
+                <ul class="list-group list-group-horizontal list-group-flush">
 
-            {%for i in range(0,socialmedialen)%}
-            <li class="list-group-item">
-                <a href="{{data.socialmedia[i].links}}" style="color:black; font-size:48px" target="_blank">
-                    <i class="fab fa-{{data.socialmedia[i].name}}"></i>
-                </a>
-            </li>
-            {%endfor%}
-        </ul>
+                    {%for i in range(0,socialmedialen)%}
+                    <li class="list-group-item">
+                        <a href="{{data.socialmedia[i].links}}" style="color:black; font-size:48px" target="_blank">
+                            <i class="{{data.socialmedia[i].type}} fa-{{data.socialmedia[i].name}}"></i>
+                        </a>
+                    </li>
+                    {%endfor%}
+                </ul>
             </div>
 
         </div>
@@ -82,22 +82,25 @@
 
 
 <footer class="footer mt-auto py-3 bg-light">
-    <div class="container " >
+    <div class="container ">
+        <div class="col-lg-4">
 
-        <ul class="list-group list-group-horizontal list-group-flush d-lg-none">
+            <ul class="list-group list-group-horizontal list-group-flush d-lg-none">
 
-            {%for i in range(0,socialmedialen)%}
-            <li class="list-group-item">
-                <a href="{{data.socialmedia[i].links}}" style="color:black; font-size:48px" target="_blank">
-                    <i class="fab fa-{{data.socialmedia[i].name}}"></i>
-                </a>
-            </li>
-            {%endfor%}
-        </ul>
-        <span class="text-center footer-text">
-           <a class="text-muted" href="/privacy-policy">privacy policy</a>
-        </span>
-
+                {%for i in range(0,socialmedialen)%}
+                <li class="list-group-item">
+                    <a href="{{data.socialmedia[i].links}}" style="color:black; font-size:48px" target="_blank">
+                        <i class="fab fa-{{data.socialmedia[i].name}}"></i>
+                    </a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <span class="text-center footer-text">
+               <a class="text-muted" href="/privacy-policy">privacy policy</a>
+            </span>
+        </div>
     </div>
 </footer>
 
