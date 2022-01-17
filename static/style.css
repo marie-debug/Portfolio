@@ -8,6 +8,11 @@ footer {
 	width: 100%;
 }
 
+footer .footer-text a{
+    font-size:20px!important;
+    font-size:20px!important;
+}
+
 #main {
 	background-color: black;
 	padding-bottom: 121px;
@@ -32,6 +37,15 @@ nav {
 	top: 0;
 }
 
+nav .list-group-item,footer .list-group-item{
+    background-color: inherit;
+    border: 0px;
+}
+
+footer .list-group-item{
+    margin-right:auto;
+    margin-left:auto;
+}
 .blackhole {
 	background-image: url("blackhole.gif");
 	background-position: center;
@@ -78,4 +92,14 @@ section h1 {
 	.container-padding {
 		padding-top: 400px;
 	}
+
+	.navbar-toggler-icon {
+        width: 3.5em;
+        height: 3.5em;
+   }
+
+   footer .footer-text{
+        display:block;
+   }
+
 }

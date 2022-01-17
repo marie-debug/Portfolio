@@ -16,6 +16,17 @@ def index():
 
     return render_template('index.html', data=data, projectslen=len(projects), socialmedialen=len(socialmedia))
 
+@app.route("/privacy-policy")
+def privacy():
+    with open("db.json", "r") as f:
+        data = json.loads(f.read())
+
+    projects = data["projects"]
+
+    socialmedia = data["socialmedia"]
+
+    return render_template('privacy-policy.html', data=data, projectslen=len(projects), socialmedialen=len(socialmedia))
+
 
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
