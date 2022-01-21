@@ -7,6 +7,8 @@ import re
 
 app = Flask(__name__)
 
+QUERY_SOCIAL_MEDIA_ICONS = "SELECT icon,type,url FROM sociallinks"
+
 
 def connect_to_db():
     conn = None
@@ -43,13 +45,15 @@ def query_data_base(db, statement):
     return rows
 
 
+def select_query(statement):
+    db = connect_to_db()
+    rows = query_data_base(db, statement)
+    return rows
+
+
 @app.route("/")
 def index():
-    db = connect_to_db()
-    social_media_list = query_data_base(db, "SELECT icon,type,url FROM sociallinks")
-
-    print(social_media_list)
-    print(type(social_media_list))
+    social_media_list = select_query(QUERY_SOCIAL_MEDIA_ICONS)
 
     with open("db.json", "r") as f:
         data = json.loads(f.read())
@@ -62,14 +66,16 @@ def index():
 
 @app.route("/privacy-policy")
 def privacy():
+    social_media_list = select_query(QUERY_SOCIAL_MEDIA_ICONS)
+
     with open("db.json", "r") as f:
         data = json.loads(f.read())
 
     projects = data["projects"]
 
-    socialmedia = data["socialmedia"]
-
-    return render_template('privacy-policy.html', data=data, projectslen=len(projects), socialmedialen=len(socialmedia))
+    return render_template('privacy-policy.html', social_media_list=social_media_list, data=data,
+                           projectslen=len(projects),
+                           socialmedialen=len(social_media_list))
 
 
 if __name__ == '__main__':
