@@ -27,16 +27,16 @@
 <body id="main" class="text-white">
 {% macro socialicons(socialmedia,socialmedialen, screen='') -%}
 
-   <ul class="list-group list-group-horizontal list-group-flush {{screen}}">
+<ul class="list-group list-group-horizontal list-group-flush {{screen}}">
 
-                {%for i in range(0,socialmedialen)%}
-                <li class="list-group-item">
-                    <a href="{{socialmedia[i].links}}" style="color:black; font-size:48px" target="_blank">
-                        <i class="{{socialmedia[i].type}} fa-{{socialmedia[i].name}}"></i>
-                    </a>
-                </li>
-                {%endfor%}
-            </ul>
+    {%for i in range(0,socialmedialen)%}
+    <li class="list-group-item">
+        <a href="{{socialmedia[i][2]}}" style="color:black; font-size:48px" target="_blank">
+            <i class="{{socialmedia[i][1]}} fa-{{socialmedia[i][0]}}"></i>
+        </a>
+    </li>
+    {%endfor%}
+</ul>
 {%- endmacro %}
 
 
@@ -75,7 +75,7 @@
 
             </ul>
             <div class="d-flex d-none d-lg-block">
-               {{ socialicons(data.socialmedia,socialmedialen) }}
+                {{ socialicons(social_media_list,socialmedialen) }}
             </div>
 
         </div>
@@ -91,7 +91,7 @@
     <div class="container ">
         <div class="col-lg-4">
 
-            {{ socialicons(data.socialmedia,socialmedialen,screen='d-lg-none') }}
+            {{ socialicons(social_media_list,socialmedialen,screen='d-lg-none') }}
         </div>
         <div class="col-lg-4">
             <span class="text-center footer-text">
