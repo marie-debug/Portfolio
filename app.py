@@ -8,6 +8,7 @@ import re
 app = Flask(__name__)
 
 QUERY_SOCIAL_MEDIA_ICONS = "SELECT icon,type,url FROM sociallinks"
+QUERY_PROJECTS = "SELECT image,thumbnail,name,summary,id,description  FROM projects"
 
 
 def connect_to_db():
@@ -53,28 +54,29 @@ def select_query(statement):
 
 @app.route("/")
 def index():
+    projects_list = select_query(QUERY_PROJECTS)
+
     social_media_list = select_query(QUERY_SOCIAL_MEDIA_ICONS)
 
     with open("db.json", "r") as f:
         data = json.loads(f.read())
 
-    projects = data["projects"]
-
-    return render_template('index.html', social_media_list=social_media_list, data=data, projectslen=len(projects),
+    return render_template('index.html', social_media_list=social_media_list, data=data, projects_list=projects_list,
+                           projectslen=len(projects_list),
                            socialmedialen=len(social_media_list))
 
 
 @app.route("/privacy-policy")
 def privacy():
+    projects_list = select_query(QUERY_PROJECTS)
     social_media_list = select_query(QUERY_SOCIAL_MEDIA_ICONS)
 
     with open("db.json", "r") as f:
         data = json.loads(f.read())
 
-    projects = data["projects"]
-
     return render_template('privacy-policy.html', social_media_list=social_media_list, data=data,
-                           projectslen=len(projects),
+                           projects_list=projects_list,
+                           projectslen=len(projects_list),
                            socialmedialen=len(social_media_list))
 
 
