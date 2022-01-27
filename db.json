@@ -2,5 +2,31 @@
   "bio": {
     "title": "ABOUT ME",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
-  }
+  },
+  "pages": [
+    {
+      "isSection": true,
+      "url": "/#aboutme",
+      "title": "ABOUT ME",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+    },
+    {
+      "isSection": true,
+      "url": "/privacy-policy",
+      "title": "Privacy Policy for marionakinyi.tech",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+    },
+    {
+      "isSection": true,
+      "url": "/terms",
+      "title": "terms",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+    },
+    {
+      "isSection": true,
+      "url": "/#about2",
+      "title": "about2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Integer pulvinar velit elementum nunc scelerisque, a viverra neque ullamcorper.\n Nulla facilisi. Aliquam tincidunt eleifend nulla ac luctus. Curabitur aliquam vestibulum\n tincidunt.\n Nam quis nisi auctor, gravida magna vitae, congue ipsum. Vivamus fermentum quam id euismod\n tincidunt.\n orbi eget venenatis mauris, placerat ullamcorper lorem. Integer ultricies venenatis egestas.\n Donec efficitur ipsum eget metus blandit porta. Sed faucibus dolor vitae urna gravida cursus\n . Donec imperdiet, diam in hendrerit euismod, massa velit ultricies arcu."
+    }
+  ]
 }

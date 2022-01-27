@@ -6,9 +6,11 @@ from flask import render_template
 import re
 
 app = Flask(__name__)
+PROJECTS_COLUMNLIST = ['image', 'thumbnail', 'name', 'summary', 'id', 'description']
+PROJECTS_TABLE = 'projects'
 
-QUERY_SOCIAL_MEDIA_ICONS = "SELECT icon,type,url FROM sociallinks"
-QUERY_PROJECTS = "SELECT image,thumbnail,name,summary,id,description  FROM projects"
+SOCIALLINKS_COLUMNLIST = ['icon', 'type', 'url']
+SOCIALLINKS_TABLE = 'sociallinks'
 
 
 def connect_to_db():
@@ -46,17 +48,36 @@ def query_data_base(db, statement):
     return rows
 
 
-def select_query(statement):
+def build_query(column_list, table):
+    column = ','.join([str(col) for col in column_list])
+
+    statement = "SELECT" + ' ' + column + ' ' + "FROM" + ' ' + table
+
+    return statement
+
+
+def select_query(column_list, table):
+    statement = build_query(column_list, table)
     db = connect_to_db()
     rows = query_data_base(db, statement)
-    return rows
+    return select_query_result_to_dictionary(column_list, rows)
+
+
+def select_query_result_to_dictionary(columns, rows):
+    dic_list = []
+    for index, row in enumerate(rows):
+        dic = {}
+        for i, column in enumerate(columns):
+            dic[column] = rows[index][i]
+        dic_list.append(dic)
+
+    return dic_list
 
 
 @app.route("/")
 def index():
-    projects_list = select_query(QUERY_PROJECTS)
-
-    social_media_list = select_query(QUERY_SOCIAL_MEDIA_ICONS)
+    social_media_list = select_query(SOCIALLINKS_COLUMNLIST, SOCIALLINKS_TABLE)
+    projects_list = select_query(PROJECTS_COLUMNLIST, PROJECTS_TABLE)
 
     with open("db.json", "r") as f:
         data = json.loads(f.read())
@@ -68,8 +89,8 @@ def index():
 
 @app.route("/privacy-policy")
 def privacy():
-    projects_list = select_query(QUERY_PROJECTS)
-    social_media_list = select_query(QUERY_SOCIAL_MEDIA_ICONS)
+    social_media_list = select_query(SOCIALLINKS_COLUMNLIST, SOCIALLINKS_TABLE)
+    projects_list = select_query(PROJECTS_COLUMNLIST, PROJECTS_TABLE)
 
     with open("db.json", "r") as f:
         data = json.loads(f.read())

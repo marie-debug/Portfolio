@@ -25,14 +25,14 @@
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
 </head>
 <body id="main" class="text-white">
-{% macro socialicons(socialmedia,socialmedialen, screen='') -%}
+{% macro socialicons(social_media_list,socialmedialen, screen='') -%}
 
 <ul class="list-group list-group-horizontal list-group-flush {{screen}}">
 
     {%for i in range(0,socialmedialen)%}
     <li class="list-group-item">
-        <a href="{{socialmedia[i][2]}}" style="color:black; font-size:48px" target="_blank">
-            <i class="{{socialmedia[i][1]}} fa-{{socialmedia[i][0]}}"></i>
+        <a href="{{social_media_list[i].url}}" style="color:black; font-size:48px" target="_blank">
+            <i class="{{social_media_list[i].type}} fa-{{social_media_list[i].icon}}"></i>
         </a>
     </li>
     {%endfor%}
@@ -62,7 +62,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {%for i in range(0,projectslen)%}
-                        <li><a class="dropdown-item" href="/#{{projects_list[i][4]}}">{{projects_list[i][2]}}</a></li>
+                        <li><a class="dropdown-item" href="/#{{projects_list[i].id}}">{{projects_list[i].name}}</a></li>
                         {%endfor%}
 
                         <li>
