@@ -50,7 +50,7 @@ footer .list-group-item {
 .blackhole {
     background-image: url("blackhole.gif");
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 }
 
 section {

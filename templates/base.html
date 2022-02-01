@@ -88,15 +88,26 @@
 
 
 <footer class="footer mt-auto py-3 bg-light">
-    <div class="container ">
-        <div class="col-lg-4">
 
-            {{ socialicons(social_media_list,socialmedialen,screen='d-lg-none') }}
-        </div>
-        <div class="col-lg-4">
-            <span class="text-center footer-text">
-               <a class="text-muted" href="/privacy-policy">privacy policy</a>
-            </span>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 ">
+
+                {{ socialicons(social_media_list,socialmedialen,screen='d-lg-none') }}
+            </div>
+
+            {% for i in range(0,pageslen) %}
+            {% if not pages[i].isSection %}
+
+            <div class="col-lg-2">
+                        <span class="text-center footer-text">
+                           <a class="text-muted" href="{{pages[i].url}}">{{pages[i].name}}</a>
+                        </span>
+
+            </div>
+            {% endif %}
+            {%endfor%}
+
         </div>
     </div>
 </footer>
