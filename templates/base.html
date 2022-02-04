@@ -68,7 +68,11 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/#aboutme">About me</a></li>
+                        {%for i in range(0,pageslen)%}
+                        {% if pages[i].is_section %}
+                        <li><a class="dropdown-item" href="{{pages[i].url}}">{{pages[i].title}}</a></li>
+                        {% endif %}
+                        {%endfor%}
                     </ul>
                 </li>
 
@@ -97,7 +101,7 @@
             </div>
 
             {% for i in range(0,pageslen) %}
-            {% if not pages[i].isSection %}
+            {% if not pages[i].is_section %}
 
             <div class="col-lg-2">
                         <span class="text-center footer-text">

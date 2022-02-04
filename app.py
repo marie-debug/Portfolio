@@ -12,6 +12,9 @@ PROJECTS_TABLE = 'projects'
 SOCIALLINKS_COLUMNLIST = ['icon', 'type', 'url']
 SOCIALLINKS_TABLE = 'sociallinks'
 
+PAGES_COLUMLIST = ['is_section', 'url', 'title', 'content', 'name']
+PAGES_TABLE = 'pages'
+
 data_url = os.getenv("DATABASE_URL")
 
 db = DataBase(data_url)
@@ -21,49 +24,39 @@ db = DataBase(data_url)
 def index():
     social_media_list = db.select_query(SOCIALLINKS_COLUMNLIST, SOCIALLINKS_TABLE)
     projects_list = db.select_query(PROJECTS_COLUMNLIST, PROJECTS_TABLE)
+    pages_list = db.select_query(PAGES_COLUMLIST, PAGES_TABLE)
 
-    with open("db.json", "r") as f:
-        data = json.loads(f.read())
-
-        pages = data["pages"]
-
-        print(pages)
-
-    return render_template('index.html', social_media_list=social_media_list, data=data, pages=pages,
-                           projects_list=projects_list, pageslen=len(pages),
+    return render_template('index.html', social_media_list=social_media_list, pages=pages_list,
+                           projects_list=projects_list, pageslen=len(pages_list),
                            projectslen=len(projects_list),
                            socialmedialen=len(social_media_list))
 
 
 @app.route("/<url>")
-def privacy(url):
+def page(url):
     url = '/' + url
 
     social_media_list = db.select_query(SOCIALLINKS_COLUMNLIST, SOCIALLINKS_TABLE)
     projects_list = db.select_query(PROJECTS_COLUMNLIST, PROJECTS_TABLE)
+    pages_list = db.select_query(PAGES_COLUMLIST, PAGES_TABLE)
 
-    with open("db.json", "r") as f:
-        data = json.loads(f.read())
-
-        pages = data["pages"]
-
-        page = get_page(pages, url)
+    page = get_page(pages_list, url)
 
     if page == None:
-        return render_template('404.html', pages=pages, social_media_list=social_media_list, data=data,
-                               projects_list=projects_list, pageslen=len(pages),
+        return render_template('404.html', pages=pages_list, social_media_list=social_media_list,
+                               projects_list=projects_list, pageslen=len(pages_list),
                                projectslen=len(projects_list),
                                socialmedialen=len(social_media_list))
 
-    return render_template('page.html', page=page, pages=pages, social_media_list=social_media_list, data=data,
-                           projects_list=projects_list, pageslen=len(pages),
+    return render_template('page.html', page=page, pages=pages_list, social_media_list=social_media_list,
+                           projects_list=projects_list, pageslen=len(pages_list),
                            projectslen=len(projects_list),
                            socialmedialen=len(social_media_list))
 
 
 def get_page(pages, url):
     for page in pages:
-        if page["isSection"] == False:
+        if page["is_section"] == False:
             if page["url"] == url:
                 return page
     return None

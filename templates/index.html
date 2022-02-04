@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 {% for i in range(0,pageslen) %}
-{% if pages[i].isSection %}
-<section id="aboutme">
+{% if pages[i].is_section %}
+<section id="{{pages[i].url[2:]}}">
 
     <div class="row">
         <div class="col-lg-4">
             <h1 class="display-5">{{pages[i].title}}</h1>
             <div class="border-end border-white pe-5">
-                <p class="lead">{{pages[i].content}}</p>
+                <p class="lead">{{pages[i].content|safe}}</p>
 
             </div>
         </div>
