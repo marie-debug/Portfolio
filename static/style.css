@@ -53,6 +53,12 @@ footer .list-group-item {
     background-size: cover;
 }
 
+.lines {
+    background-image: url("lines.gif");
+    background-position: center;
+    background-size: cover;
+}
+
 section {
     padding-bottom: 100px;
     padding-top: 100px;
@@ -103,13 +109,19 @@ section h1 {
         display: block;
     }
 
-    #privacy h2 h1 {
+    ul li {
+        font-size: 40px !important;
+    }
 
+    h3 {
         font-size: 60px !important;
     }
 
-    #privacy ul li {
+    h4 {
+        font-size: 50px !important;
+    }
 
-        font-size: 40px !important;
+    h2 {
+        font-size: 70px !important;
     }
 }
