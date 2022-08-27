@@ -27,3 +27,13 @@ CREATE TABLE IF NOT EXISTS public.pages
     name character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT pages_pkey PRIMARY KEY (url)
 );
+
+ALTER TABLE IF EXISTS public.projects
+    ADD COLUMN published date;
+
+ALTER TABLE IF EXISTS public.projects
+    ADD COLUMN image_alt_text character varying;
+
+
+ALTER TABLE IF EXISTS public.sociallinks
+    ADD COLUMN link_alt_text character varying;

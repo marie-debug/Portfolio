@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="{{page.name}}">
-    <h1 class="display-5 fw-bold">{{page.title}}</h1>
+    <section id="{{ page.name }}">
+        <!-- Section content of additional pages -->
+        <h1>{{ page.title }}</h1>
 
-    <p>{{page.content|safe}}</p>
-</section>
+        <p>{{ page.content|safe }}</p>
+    </section>
 {% endblock %}

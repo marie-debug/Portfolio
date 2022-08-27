@@ -6,10 +6,10 @@ from flask import render_template
 from database import DataBase
 
 app = Flask(__name__)
-PROJECTS_COLUMNLIST = ['image', 'thumbnail', 'name', 'summary', 'id', 'description']
+PROJECTS_COLUMNLIST = ['image', 'thumbnail', 'name', 'summary', 'id', 'description', 'image_alt_text', 'published']
 PROJECTS_TABLE = 'projects'
 
-SOCIALLINKS_COLUMNLIST = ['icon', 'type', 'url']
+SOCIALLINKS_COLUMNLIST = ['icon', 'type', 'url', 'link_alt_text']
 SOCIALLINKS_TABLE = 'sociallinks'
 
 PAGES_COLUMLIST = ['is_section', 'url', 'title', 'content', 'name']
@@ -49,6 +49,19 @@ def page(url):
                                socialmedialen=len(social_media_list))
 
     return render_template('page.html', page=page, pages=pages_list, social_media_list=social_media_list,
+                           projects_list=projects_list, pageslen=len(pages_list),
+                           projectslen=len(projects_list),
+                           socialmedialen=len(social_media_list))
+
+
+@app.route("/resume")
+def resume():
+    social_media_list = db.select_query(SOCIALLINKS_COLUMNLIST, SOCIALLINKS_TABLE)
+    projects_list = db.select_query(PROJECTS_COLUMNLIST, PROJECTS_TABLE)
+    pages_list = db.select_query(PAGES_COLUMLIST, PAGES_TABLE)
+
+
+    return render_template('resume.html', pages=pages_list, social_media_list=social_media_list,
                            projects_list=projects_list, pageslen=len(pages_list),
                            projectslen=len(projects_list),
                            socialmedialen=len(social_media_list))
