@@ -17,7 +17,7 @@ The purpose of this website is  to provide an online portfolio that provides inf
 6. S3 bucket: Used to store images.
 
 ## Sitemap
-![Sitemap](./map.png "Site map")
+![Sitemap](./docs/map.png "Site map")
 
 
 ## Tech stack 
