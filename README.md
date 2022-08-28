@@ -4,7 +4,8 @@
 [My portfolio website](https://marion-akinyi-portfolio.herokuapp.com/)
 ### link to my GitHub repo
 [Github](https://github.com/marie-debug/Portfolio)
-
+### Youtube presentation
+[Youtube presentation](https://youtu.be/R3auCpCDqk4)
 ## Purpose & target audience
 The purpose of this website is  to provide an online portfolio that provides information about me, my skills, interests, professional knowledge and a showcase of my work. To potential employers in the IT field.
 ## Functionality / features
@@ -37,10 +38,11 @@ The purpose of this website is  to provide an online portfolio that provides inf
 2. AWS S3 Bucket
 
 ### Architecture diagram
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](./docs/architecture.png)
 
 ## Screenshots
-![Desktop](./desktop.png)
+![Desktop](./docs/desktop.png)
 
 
-![Desktop](./mobile.png)
+![Desktop](./docs/mobile.png)
+
